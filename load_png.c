@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load_png.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/05 20:22:09 by ckrasniq          #+#    #+#             */
+/*   Updated: 2025/02/05 20:22:10 by ckrasniq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	add_images(t_game *game)
@@ -5,11 +17,8 @@ void	add_images(t_game *game)
 	mlx_texture_t* texture;
 	mlx_image_t* image;
 
-	printf("Adding images\n");
 	texture = mlx_load_png("textures/Floor1.png");
-	printf("Floor loaded\n");
 	image = mlx_texture_to_image(game->mlx, texture);
-	printf("Floor converted\n");
 	game->floor = image;
 	mlx_delete_texture(texture);
 	texture = mlx_load_png("textures/Wall.png");

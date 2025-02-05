@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/05 20:22:31 by ckrasniq          #+#    #+#             */
+/*   Updated: 2025/02/05 20:22:32 by ckrasniq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 char	*join_strings(char *buffer, char *temp)
@@ -31,7 +43,7 @@ void	ft_flood_fill(char **map, int x, int y, t_game *game)
 {
 	if (x < 0 || y < 0 || x >= game->columns || y >= game->rows)
 		return ;
-	if (map[y][x] == '1' || map[y][x] == 'X')
+	if (map[y][x] == '1' || map[y][x] == 'X' || map[y][x] == 'E')
 		return ;
 	{
 		map[y][x] = 'X';

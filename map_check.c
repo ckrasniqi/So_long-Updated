@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_check.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/05 20:22:16 by ckrasniq          #+#    #+#             */
+/*   Updated: 2025/02/05 20:22:29 by ckrasniq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	check_walls(t_game *game)
@@ -16,7 +28,7 @@ int	check_walls(t_game *game)
 		while (game->map[i][++j])
 		{
 			if ((i == 0 || i == game->rows - 1 || j == 0 || \
-                 j == game->columns	- 1) && game->map[i][j] != '1')
+				j == game->columns	- 1) && game->map[i][j] != '1')
 				return (0);
 		}
 	}
@@ -59,8 +71,8 @@ int	check_invalid_chars(t_game *game)
 		while (game->map[i][++j])
 		{
 			if (game->map[i][j] != 'P' && game->map[i][j] != 'C' && \
-                game->map[i][j] != 'E' && game->map[i][j] != '1' && \
-                game->map[i][j] != '0')
+				game->map[i][j] != 'E' && game->map[i][j] != '1' && \
+				game->map[i][j] != '0')
 				return (0);
 		}
 	}
@@ -79,7 +91,7 @@ int	check_valid_path(t_game *game)
 		j = -1;
 		while (game->map_copy[i][++j])
 		{
-			if (game->map_copy[i][j] == 'C' || game->map_copy[i][j] == 'E')
+			if (game->map_copy[i][j] == 'C' || game->map_copy[i][j] == 'P')
 				error_exit("Error\nInvalid map,exit or coin is blocked\n");
 		}
 	}

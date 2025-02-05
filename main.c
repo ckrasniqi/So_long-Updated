@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/05 20:21:59 by ckrasniq          #+#    #+#             */
+/*   Updated: 2025/02/05 20:48:49 by ckrasniq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 t_game	*init_game(char *argv)
@@ -35,24 +47,17 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		printf("Welcome to So Long!\n");
 		game = init_game(argv[1]);
-		printf("Map loaded successfully\n");
-		add_images(game);
-		printf("Images loaded successfully\n");
-		check_map_validity(game);
-		printf("Map is valid\n");
 		game->mlx = mlx_init(PXL * game->columns, PXL * game->rows,
 				"Maze O'Gold", true);
-		printf("Mlx initialized successfully\n");
 		if (!game->mlx)
 		{
-			free_arr_of_arr(game->map);
 			free(game);
 			error_exit("Error\nFailed to initialize mlx\n");
 		}
+		check_map_validity(game);
+		add_images(game);
 		launch_game(game);
-		printf("Game launched successfully\n");
 	}
 	else
 	{

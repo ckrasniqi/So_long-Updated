@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/02/05 20:22:13 by ckrasniq          #+#    #+#              #
+#    Updated: 2025/02/05 20:45:13 by ckrasniq         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = so_long
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -9,12 +21,12 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
-LIBFT_REPO = https://github.com/julcalde/libft_updated.git
+LIBFT_REPO = https://github.com/ckrasniqi/libft_updated.git
 
 MLX_DIR = MLX42
 MLX_BUILD = mlx_build
 MLX = $(MLX_BUILD)/libmlx42.a
-MLX_FLAGS = -framework Cocoa -framework OpenGL -framework IOKit -L/opt/homebrew/lib -lglfw
+MLX_FLAGS = -lmlx42 -Iinclude -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 
 all: $(NAME)
 
@@ -40,13 +52,13 @@ $(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) $(OBJS) -L$(LIBFT_DIR) -lft -L$(MLX_BUILD) -lmlx42 $(MLX_FLAGS) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
-	rm -rf $(MLX_BUILD)
+	@rm -rf $(OBJ_DIR)
+	@rm -rf $(MLX_BUILD)
 
 fclean: clean
-	rm -f $(NAME)
-	rm -rf $(LIBFT_DIR)
-	rm -rf $(MLX_DIR)
+	@rm -f $(NAME)
+	@rm -rf $(LIBFT_DIR)
+	@rm -rf $(MLX_DIR)
 
 re: fclean all
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/05 20:22:36 by ckrasniq          #+#    #+#             */
+/*   Updated: 2025/02/05 20:26:26 by ckrasniq         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 char	**read_map(char *argv)
@@ -12,6 +24,8 @@ char	**read_map(char *argv)
 		error_exit("Erorr\nFailed to open file\n");
 	tmp = ft_strdup("");
 	line = get_next_line(fd);
+	printf("File opened\n");
+
 	while (line != NULL)
 	{
 		tmp = join_strings(tmp, line);
@@ -31,19 +45,14 @@ void	check_map_validity(t_game *game)
 {
 	if (check_walls(game) == 0)
 		error_exit("Error\nInvalid map\n");
-	printf("Walls are valid\n");
 	if (game->rows < 3 || game->columns < 3)
 		error_exit("Error\nInvalid map\nMap is too small\n");
-	printf("Map is big enough\n");
 	if (check_elements(game) == 0)
 		error_exit("Error\nInvalid elements\n");
-	printf("Elements are valid\n");
 	if (check_invalid_chars(game) == 0)
 		error_exit("Error\nMap contains invalid characters\n");
-	printf("Characters are valid\n");
 	if (check_valid_path(game) == 0)
 		error_exit("Error\nInvalid map, exit inaccessible\n");
-	printf("Map is valid\n");
 }
 
 t_point	find_player(char **map, char c)
