@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:21:59 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/05 20:48:49 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:19:46 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_game	*init_game(char *argv)
 	game->player_coords = find_player(game->map, 'P');
 	return (game);
 }
+
 void	launch_game(t_game *game)
 {
 	flood_fill_floor_wall(game);
@@ -40,6 +41,12 @@ void	launch_game(t_game *game)
 	mlx_terminate(game->mlx);
 	free_the(game);
 }
+
+// void leaks ()
+// {
+//     system("leaks so_long");
+// }
+// atexit(leaks);
 
 int	main(int argc, char **argv)
 {

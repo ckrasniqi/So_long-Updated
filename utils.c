@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:44 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/05 20:22:45 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:13:10 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	free_the(t_game *game)
 	mlx_delete_image(game->mlx, game->wall);
 	mlx_delete_image(game->mlx, game->coin);
 	free_arr_of_arr(game->map);
-	free_arr_of_arr(game->map_copy);
 	free(game);
 	mlx_close_window(game->mlx);
 	exit(0);

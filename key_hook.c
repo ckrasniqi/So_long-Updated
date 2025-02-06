@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:06 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/05 20:22:07 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:12:13 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	key_set(mlx_key_data_t paramkey, t_game *game)
 
 void	go_up(t_game *game)
 {
-	if (game->map[game->player_coords.y - 1][game->player_coords.x] != '1' && \
-		(game->map[game->player_coords.y - 1][game->player_coords.x] != 'E' || \
-		game->coins_left == 0))
+	if (game->map[game->player_coords.y - 1][game->player_coords.x] != '1'
+		&& (game->map[game->player_coords.y - 1][game->player_coords.x] != 'E'
+			|| game->coins_left == 0))
 	{
 		if (game->map[game->player_coords.y - 1][game->player_coords.x] == 'C')
 			game->coins_left--;
-		if (game->map[game->player_coords.y - 1][game->player_coords.x] == 'E' && \
-			game->coins_left == 0)
+		if (game->map[game->player_coords.y - 1][game->player_coords.x] == 'E'
+			&& game->coins_left == 0)
 		{
 			ft_printf("You won the game with %d steps\n", game->steps);
 			free_the(game);
@@ -55,14 +55,14 @@ void	go_up(t_game *game)
 
 void	go_down(t_game *game)
 {
-	if (game->map[game->player_coords.y + 1][game->player_coords.x] != '1' && \
-		(game->map[game->player_coords.y + 1][game->player_coords.x] != 'E' || \
-		game->coins_left == 0))
+	if (game->map[game->player_coords.y + 1][game->player_coords.x] != '1'
+		&& (game->map[game->player_coords.y + 1][game->player_coords.x] != 'E'
+			|| game->coins_left == 0))
 	{
 		if (game->map[game->player_coords.y + 1][game->player_coords.x] == 'C')
 			game->coins_left--;
-		if (game->map[game->player_coords.y + 1][game->player_coords.x] == 'E' && \
-			game->coins_left == 0)
+		if (game->map[game->player_coords.y + 1][game->player_coords.x] == 'E'
+			&& game->coins_left == 0)
 		{
 			ft_printf("You won the game with %d steps\n", game->steps);
 			free_the(game);
@@ -79,14 +79,14 @@ void	go_down(t_game *game)
 
 void	go_left(t_game *game)
 {
-	if (game->map[game->player_coords.y][game->player_coords.x - 1] != '1' && \
-		(game->map[game->player_coords.y][game->player_coords.x - 1] != 'E'	|| \
-		game->coins_left == 0))
+	if (game->map[game->player_coords.y][game->player_coords.x - 1] != '1'
+		&& (game->map[game->player_coords.y][game->player_coords.x - 1] != 'E'
+			|| game->coins_left == 0))
 	{
 		if (game->map[game->player_coords.y][game->player_coords.x - 1] == 'C')
 			game->coins_left--;
-		if (game->map[game->player_coords.y][game->player_coords.x - 1] == 'E' && \
-			game->coins_left == 0)
+		if (game->map[game->player_coords.y][game->player_coords.x - 1] == 'E'
+			&& game->coins_left == 0)
 		{
 			ft_printf("You won the game with %d steps\n", game->steps);
 			free_the(game);
@@ -103,14 +103,14 @@ void	go_left(t_game *game)
 
 void	go_right(t_game *game)
 {
-	if (game->map[game->player_coords.y][game->player_coords.x + 1] != '1' && \
-		(game->map[game->player_coords.y][game->player_coords.x + 1] != 'E' || \
-		game->coins_left == 0))
+	if (game->map[game->player_coords.y][game->player_coords.x + 1] != '1'
+		&& (game->map[game->player_coords.y][game->player_coords.x + 1] != 'E'
+			|| game->coins_left == 0))
 	{
 		if (game->map[game->player_coords.y][game->player_coords.x + 1] == 'C')
 			game->coins_left--;
-		if (game->map[game->player_coords.y][game->player_coords.x + 1] == 'E' && \
-			game->coins_left == 0)
+		if (game->map[game->player_coords.y][game->player_coords.x + 1] == 'E'
+			&& game->coins_left == 0)
 		{
 			ft_printf("You won the game with %d steps\n", game->steps);
 			free_the(game);

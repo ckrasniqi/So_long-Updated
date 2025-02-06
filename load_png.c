@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:09 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/05 20:22:10 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:07:52 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	add_images(t_game *game)
 {
-	mlx_texture_t* texture;
-	mlx_image_t* image;
+	mlx_texture_t	*texture;
+	mlx_image_t		*image;
 
 	texture = mlx_load_png("textures/Floor1.png");
 	image = mlx_texture_to_image(game->mlx, texture);
@@ -38,6 +38,7 @@ void	add_images(t_game *game)
 	game->leprechaun = image;
 	mlx_delete_texture(texture);
 }
+
 void	flood_fill_floor_wall(t_game *game)
 {
 	int	i;
@@ -59,8 +60,8 @@ void	flood_fill_floor_wall(t_game *game)
 
 void	flood_fill_collectibles(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (game->map[++i])

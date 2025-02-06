@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:36 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/05 20:26:26 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:34:37 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	**read_map(char *argv)
 		error_exit("Erorr\nFailed to open file\n");
 	tmp = ft_strdup("");
 	line = get_next_line(fd);
-	printf("File opened\n");
-
+	if (!line)
+		error_exit("Error\nEmpty file\n");
 	while (line != NULL)
 	{
 		tmp = join_strings(tmp, line);
@@ -61,8 +61,8 @@ t_point	find_player(char **map, char c)
 	int		i;
 	int		j;
 
-    coords.x = 0;
-    coords.y = 0;
+	coords.x = 0;
+	coords.y = 0;
 	i = -1;
 	while (map[++i])
 	{
@@ -82,8 +82,8 @@ t_point	find_player(char **map, char c)
 
 int	check_double_nl(char *map)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = -1;
 	count = 0;

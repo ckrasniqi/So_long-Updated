@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:16 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/05 20:22:29 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:06:59 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check_walls(t_game *game)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	size_t	first_row_len;
 
 	i = -1;
@@ -27,8 +27,8 @@ int	check_walls(t_game *game)
 			return (0);
 		while (game->map[i][++j])
 		{
-			if ((i == 0 || i == game->rows - 1 || j == 0 || \
-				j == game->columns	- 1) && game->map[i][j] != '1')
+			if ((i == 0 || i == game->rows - 1 || j == 0 || j == game->columns
+					- 1) && game->map[i][j] != '1')
 				return (0);
 		}
 	}
@@ -70,9 +70,9 @@ int	check_invalid_chars(t_game *game)
 		j = -1;
 		while (game->map[i][++j])
 		{
-			if (game->map[i][j] != 'P' && game->map[i][j] != 'C' && \
-				game->map[i][j] != 'E' && game->map[i][j] != '1' && \
-				game->map[i][j] != '0')
+			if (game->map[i][j] != 'P' && game->map[i][j] != 'C'
+				&& game->map[i][j] != 'E' && game->map[i][j] != '1'
+				&& game->map[i][j] != '0')
 				return (0);
 		}
 	}
