@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:21:59 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/06 21:19:46 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/07 14:03:40 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_game	*init_game(char *argv)
 		error_exit("Error\nMalloc failed\n");
 	game->map = read_map(argv);
 	game->map_copy = copy_map(game->map);
+	game->map_copy2 = copy_map(game->map);
 	game->steps = 0;
 	game->rows = count_rows(game->map);
 	game->columns = count_columns(game->map);
@@ -46,7 +47,7 @@ void	launch_game(t_game *game)
 // {
 //     system("leaks so_long");
 // }
-// atexit(leaks);
+// 	atexit(leaks);
 
 int	main(int argc, char **argv)
 {

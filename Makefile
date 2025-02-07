@@ -6,14 +6,14 @@
 #    By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/05 20:22:13 by ckrasniq          #+#    #+#              #
-#    Updated: 2025/02/05 20:45:13 by ckrasniq         ###   ########.fr        #
+#    Updated: 2025/02/07 13:55:50 by ckrasniq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = main.c map.c map_utils.c key_hook.c utils.c load_png.c map_check.c
+SRCS = main.c map.c map_utils.c key_hook.c utils.c load_png.c map_check.c map_check_2.c
 
 # Create obj directory path
 OBJ_DIR = obj

@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:36 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/06 21:34:37 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/07 13:50:54 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	check_map_validity(t_game *game)
 	if (check_invalid_chars(game) == 0)
 		error_exit("Error\nMap contains invalid characters\n");
 	if (check_valid_path(game) == 0)
+		error_exit("Error\nInvalid map\n");
+	if (check_valid_path2(game) == 0)
 		error_exit("Error\nInvalid map, exit inaccessible\n");
 }
 

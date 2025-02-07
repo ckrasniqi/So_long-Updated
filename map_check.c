@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:16 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/06 21:06:59 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/07 14:02:43 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	check_valid_path(t_game *game)
 		while (game->map_copy[i][++j])
 		{
 			if (game->map_copy[i][j] == 'C' || game->map_copy[i][j] == 'P')
-				error_exit("Error\nInvalid map,exit or coin is blocked\n");
+				error_exit("Error\nInvalid map, player or coin is blocked\n");
 		}
 	}
 	free_arr_of_arr(game->map_copy);

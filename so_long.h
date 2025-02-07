@@ -6,7 +6,7 @@
 /*   By: ckrasniq <ckrasniq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:22:41 by ckrasniq          #+#    #+#             */
-/*   Updated: 2025/02/06 21:07:07 by ckrasniq         ###   ########.fr       */
+/*   Updated: 2025/02/07 13:55:07 by ckrasniq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_game
 	mlx_t		*mlx;
 	char		**map;
 	char		**map_copy;
+	char		**map_copy2;
 	int			steps;
 	int			rows;
 	int			columns;
@@ -62,6 +63,13 @@ void			go_right(t_game *game);
 void			add_images(t_game *game);
 void			flood_fill_floor_wall(t_game *game);
 void			flood_fill_collectibles(t_game *game);
+
+// map_check2.c
+
+void	ft_flood_fill2(char **map, int x, int y, t_game *game);
+void	fill_map2(t_game *game, int x, int y);
+int		check_valid_path2(t_game *game);
+
 
 // Map reading functions
 
